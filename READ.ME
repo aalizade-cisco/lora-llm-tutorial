@@ -1,0 +1,22 @@
+# Practicing LoRa LLM Deployed in MediaTek Platforms (lora-llm-tutorial)
+This is the tutorial to learn how to use Mediatek platform
+
+## Download the SDKs and models from Mediatek website
+NeuroPilot SDK: Premium 7.0.5 or later
+Converter Tool (mtk_converter): 7.14.1 (from neuropilot-sdk-premium-7.0.4) or higher
+LLM_SDK Tool (mtk_llm_sdk): 1.2.4 (from GAI-Deployment-Toolkit-<toolkit_version>_<model_name>-<model_version>/post_training_quantize/mtk_llm_sdk)
+
+In our high performance machine, these are copied into the following folders:
+- ~/mediatek/GAI-Deployment-Toolkit-v1.0.2_alpaca-7b-lora-fusion-v0.1/mtk_llm_sdk
+- ....
+
+## Dockerization
+### Build the Docker
+cd /home/cisco/git/lora-llm-tutorial
+
+sudo docker build -t lora-llm-tutorial .
+
+
+### Run the Docker
+sudo docker run -it --mount type=bind,source=/home/cisco/anaconda3,target=/home/cisco/anaconda3 lora-llm-tutorial
+
